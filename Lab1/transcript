@@ -1,0 +1,195 @@
+# Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
+do runlab.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:13:55 on Apr 08,2026
+# vlog -reportprogress 300 ./mux2_1.sv 
+# ** Error: (vlog-7) Failed to open design unit file "./mux2_1.sv" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 13:13:55 on Apr 08,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 7
+# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./mux2_1.sv""
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:17:23 on Apr 08,2026
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 13:17:24 on Apr 08,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work mux2_1_testbench 
+# Start time: 13:17:24 on Apr 08,2026
+# Loading sv_std.std
+# Loading work.mux2_1_testbench
+# Loading work.mux2_1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/ee469labs/lab1/wave.do
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 10:25:28 on Apr 09,2026
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 10:25:28 on Apr 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 10:25:30 on Apr 09,2026, Elapsed time: 21:08:06
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work mux2_1_testbench 
+# Start time: 10:25:30 on Apr 09,2026
+# Loading sv_std.std
+# Loading work.mux2_1_testbench
+# Loading work.mux2_1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+run runlab.do
+# Invalid time value: runlab.do
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 10:27:21 on Apr 09,2026
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 10:27:21 on Apr 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 10:27:22 on Apr 09,2026, Elapsed time: 0:01:52
+# Errors: 1, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work mux2_1_testbench 
+# Start time: 10:27:22 on Apr 09,2026
+# Loading sv_std.std
+# Loading work.mux2_1_testbench
+# Loading work.mux2_1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 10:28:21 on Apr 09,2026
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 10:28:21 on Apr 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 10:28:22 on Apr 09,2026, Elapsed time: 0:01:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work mux2_1_testbench 
+# Start time: 10:28:22 on Apr 09,2026
+# Loading sv_std.std
+# Loading work.mux2_1_testbench
+# Loading work.mux2_1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 10:28:37 on Apr 09,2026
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 10:28:38 on Apr 09,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 10:28:38 on Apr 09,2026, Elapsed time: 0:00:16
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work mux2_1_testbench 
+# Start time: 10:28:39 on Apr 09,2026
+# Loading sv_std.std
+# Loading work.mux2_1_testbench
+# Loading work.mux2_1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 10:30:15 on Apr 09,2026
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 10:30:15 on Apr 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 10:30:16 on Apr 09,2026, Elapsed time: 0:01:37
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work mux2_1_testbench 
+# Start time: 10:30:16 on Apr 09,2026
+# Loading sv_std.std
+# Loading work.mux2_1_testbench
+# Loading work.mux2_1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 10:35:17 on Apr 09,2026
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 10:35:17 on Apr 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 10:35:18 on Apr 09,2026, Elapsed time: 0:05:02
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work mux2_1_testbench 
+# Start time: 10:35:18 on Apr 09,2026
+# Loading sv_std.std
+# Loading work.mux2_1_testbench
+# Loading work.mux2_1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+run runlab.do
+# Invalid time value: runlab.do
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 10:39:24 on Apr 09,2026
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 10:39:24 on Apr 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 10:39:25 on Apr 09,2026, Elapsed time: 0:04:07
+# Errors: 1, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work mux2_1_testbench 
+# Start time: 10:39:25 on Apr 09,2026
+# Loading sv_std.std
+# Loading work.mux2_1_testbench
+# Loading work.mux2_1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# End time: 12:09:53 on Apr 09,2026, Elapsed time: 1:30:28
+# Errors: 0, Warnings: 0
