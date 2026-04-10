@@ -1,0 +1,2 @@
+module register (q, d, en, reset, clk);
+	output logic [63:0] q;
