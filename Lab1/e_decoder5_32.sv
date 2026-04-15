@@ -1,5 +1,5 @@
 //This file will contain the various enabled decoders, starting with a 2:4 decoder, then a 3:8, and lastly a 5:32.
-
+`timescale 1ps/1ps
 module e_decoder2_4 (output logic [3:0] out, 
 							input logic [1:0] in,
 							input logic en
@@ -53,4 +53,30 @@ module e_decoder5_32 (output logic [31:0] out,
 	e_decoder3_8 b2(.out(out[23:16]), .in(in[2:0]), .en(aOut[2]));
 	e_decoder3_8 b3(.out(out[31:24]), .in(in[2:0]), .en(aOut[3]));
 endmodule
+	
+
+`timescale 1ps/1ps
+module e_decoder5_32_testbench();
+
+	logic [31:0] out;
+	logic [4:0] in;
+	logic en;
+	
+	e_decoder5_32 dut (.out(out), .in(in), .en(en));
+	
+	initial begin
+		en = 0; in = 5'b00000; #300; // Disabled cases (en = 0)
+		en = 0; in = 5'b00100; #300;
+		en = 0; in = 5'b11111; #300;
+		
+		en = 1; in = 5'b00000; #300; // Enabled cases (en = 0)
+		en = 1; in = 5'b00001; #300;
+		en = 1; in = 5'b00010; #300;
+		en = 1; in = 5'b00100; #300;
+		en = 1; in = 5'b01000; #300;
+		en = 1; in = 5'b11111; #300;
+		
+	end
+endmodule
+		
 	
