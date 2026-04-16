@@ -299,7 +299,6 @@ set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name STATE_MACHINE_PROCESSING "USER-ENCODED"
 set_global_assignment -name SYSTEMVERILOG_FILE DE1_SoC.sv
-set_global_assignment -name SYSTEMVERILOG_FILE mux2_1.sv
 set_global_assignment -name SYSTEMVERILOG_FILE alustim.sv
 set_global_assignment -name SYSTEMVERILOG_FILE alu.sv
 set_global_assignment -name SYSTEMVERILOG_FILE fullAdder.sv

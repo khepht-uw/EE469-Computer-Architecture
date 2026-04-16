@@ -11,6 +11,8 @@ module alu (input logic [63:0] A,
 				);
 	
 	wire [64:0] carrier; //65 total wires, [0-63] for ripple through cin/cout, [64] for final carry_out
+	wire sameSign, signChange;
+	
 	assign carrier[0] = cntrl[0];
 	
 	genvar i;
@@ -23,5 +25,10 @@ module alu (input logic [63:0] A,
 	assign carry_out = carrier[64];
 	
 	//TODO: Flag logic, then update alustim file
-	
+	assign negative = result[63]; //If MSB is 0, negative 0, if it's 1, the number is negative and gets 1
+	nor #50 isZero (zero, result, 64'b0);
+	//Overflow
+	xnor #50 of_init (sameSign, A[63], B[63]);
+	xor #50 resChange (signChange
+	xor #50 of (overflow, sameSign, result[63]);
 endmodule
