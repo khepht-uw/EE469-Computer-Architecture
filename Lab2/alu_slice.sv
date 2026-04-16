@@ -14,8 +14,8 @@ module alu_slice (input logic a,
 	wire outFA, outmuxb; //Full adder sum and mux output
 	
 	not #50 n0 (b_n, b);
-	mux2_1 muxb (.out(outmuxb), .i0(b), .i1(b_n), .sel(control[0]));	//Control[0] is the subtract enable, leftmost bit
-																							//When control[0]=1, it feeds inverts b, and in the FA...
+	mux2_1 muxb (.out(outmuxb), .i0(b), .i1(b_n), .sel(control[0]));	//Control[0] is the subtract enable, rightmost bit
+																							//When control[0]=1, it feeds NOT b, and in the FA...
 	fullAdder FA (.A(a), .B(outmuxb), .cin(cin), .sum(outFA), .cout(cout)); //... cin would be connected to control[0], so we add 1,
 																									//correctly subtracting using 2's complement (A+NOT B+1)
 	and #50 a100 (outAND, a, b);

@@ -6,6 +6,7 @@ vlib work
 #     their own "vlog" line below.
 vlog "./muxTo8_1.sv"
 vlog "./fullAdder.sv"
+vlog "./sixtyfournor.sv"
 vlog "./alu_slice.sv"
 vlog "./alu.sv"
 vlog "./alustim.sv"
