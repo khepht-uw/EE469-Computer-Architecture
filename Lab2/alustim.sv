@@ -52,7 +52,7 @@ module alustim();
 		#(delay);
 		assert(result == 64'h0000000000000002 && carry_out == 0 && overflow == 0 && negative == 0 && zero == 0);
 		
-		// --- 1. UNSIGNED FOCUS: The "Wrap Around" ---
+		// Wrap Around
 		// Adding 1 to the max possible value. 
 		// Mathematically: (2^64 - 1) + 1 = 2^64 (which is 0 in a 64-bit space)
 		A = 64'hFFFFFFFFFFFFFFFF; B = 64'h0000000000000001;
@@ -60,27 +60,27 @@ module alustim();
 		assert(result == 64'h0000000000000000 && carry_out == 1 && zero == 1 && overflow == 0);
 		// Note: Overflow is 0 because -1 + 1 = 0 is a valid signed operation.
 
-		// --- 2. SIGNED FOCUS: Positive Overflow ---
+		// Positive Overflow
 		// Max Positive + 1. The result will "flip" to negative.
 		A = 64'h7FFFFFFFFFFFFFFF; B = 64'h0000000000000001;
 		#(delay);
 		assert(result == 64'h8000000000000000 && overflow == 1 && negative == 1 && carry_out == 0);
 		// Note: Carry_out is 0 because no bit "fell off" the 64-bit end.
 
-		// --- 3. SIGNED FOCUS: Negative Overflow ---
+		// Negative Overflow
 		// Most Negative + (-1). Adding two negatives results in a positive.
 		A = 64'h8000000000000000; B = 64'hFFFFFFFFFFFFFFFF; 
 		#(delay);
 		assert(result == 64'h7FFFFFFFFFFFFFFF && overflow == 1 && negative == 0 && carry_out == 1);
 
-		// --- 4. SIGNED/UNSIGNED MIX: Large Numbers, No Overflow ---
+		// Large Numbers, No Overflow 
 		// Adding two numbers with MSB=1 that don't overflow the signed range.
 		// (-2) + (-2) = -4
 		A = 64'hFFFFFFFFFFFFFFFE; B = 64'hFFFFFFFFFFFFFFFE;
 		#(delay);
 		assert(result == 64'hFFFFFFFFFFFFFFFC && negative == 1 && carry_out == 1 && overflow == 0);
 
-		// --- 5. THE "CLEAN" POSITIVE  ---
+		// Clean Positive addition
 		// Using 0 as MSB to avoid negative interpretation.
 		// 0111... + 0000...1
 		A = 64'h7FFFFFFFFFFFFFFE; B = 64'h0000000000000001;
@@ -89,15 +89,18 @@ module alustim();
 		
 		
 		$display("%t testing subtraction", $time);
-		cntrl = ALU_SUBTRACT;
-		A = 64'h0000000000000001; B = 64'h0000000000000001;
+		cntrl = ALU_SUBTRACT; //In subtraction, carryout is always 1 if A >= B due to 2's complement
+		A = 64'h0000000000000003; B = 64'h0000000000000001;
 		#(delay);
-		assert(result == 64'h0000000000000000 && carry_out == 0 && overflow == 0 && negative == 0 && zero == 1);
+		assert(result == 64'h0000000000000002 && carry_out == 1 && overflow == 0 && negative == 0 && zero == 0);
+		
 		
 		A = 64'h7FFFFFFFFFFFFFFF; B = 64'h7FFFFFFFFFFFFFFF;
 		#(delay);
-		assert(result == 64'h0000000000000000 && carry_out == 0 && overflow == 0 && negative == 0 && zero == 0);
+		assert(result == 64'h0000000000000000 && carry_out == 1 && overflow == 0 && negative == 0 && zero == 1);
 		
-		
+		A = 64'h0000000000000001; B = 64'h0000000000000002;
+		#(delay);
+		assert(result == 64'hFFFFFFFFFFFFFFFF && carry_out == 0 && overflow == 0 && negative == 1 && zero == 0);
 	end
 endmodule
