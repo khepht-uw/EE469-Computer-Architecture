@@ -68,7 +68,7 @@ module alustim();
 		// Note: Carry_out is 0 because no bit "fell off" the 64-bit end.
 
 		// Negative Overflow
-		// Most Negative + (-1). Adding two negatives results in a positive.
+		// (-1) + Most Negative. Adding two negatives results in a positive.
 		A = 64'h8000000000000000; B = 64'hFFFFFFFFFFFFFFFF; 
 		#(delay);
 		assert(result == 64'h7FFFFFFFFFFFFFFF && overflow == 1 && negative == 0 && carry_out == 1);
@@ -102,5 +102,40 @@ module alustim();
 		A = 64'h0000000000000001; B = 64'h0000000000000002;
 		#(delay);
 		assert(result == 64'hFFFFFFFFFFFFFFFF && carry_out == 0 && overflow == 0 && negative == 1 && zero == 0);
+		
+		// AND tests
+      $display("%t testing AND", $time);
+      cntrl = ALU_AND;
+	
+      A = 64'hF0F0F0F0F0F0F0F0; B = 64'h0FF00FF00FF00FF0;
+      #(delay);
+      assert(result == 64'h00F000F000F000F0 && negative == 0 && zero == 0);
+
+      A = 64'hFFFFFFFFFFFFFFFF; B = 64'h0000000000000000;
+      #(delay);
+      assert(result == 64'h0000000000000000 && negative == 0 && zero == 1);
+		
+// XOR tests
+      $display("%t testing XOR", $time);
+      cntrl = ALU_XOR;
+
+      A = 64'hFFFF0000FFFF0000; B = 64'h00FFFF0000FFFF00;
+		#(delay);
+      assert(result == 64'hFF00FF00FF00FF00 && negative == 1 && zero == 0);
+
+      A = 64'hAAAAAAAAAAAAAAAA; B = 64'hAAAAAAAAAAAAAAAA;
+      #(delay);
+      assert(result == 64'h0000000000000000 && negative == 0 && zero == 1);
+// OR tests
+      $display("%t testing OR", $time);
+      cntrl = ALU_OR;
+
+      A = 64'hF0F0F0F0F0F0F0F0; B = 64'h0FF00FF00FF00FF0;
+      #(delay);
+      assert(result == 64'hFFF0FFF0FFF0FFF0 && negative == 1 && zero == 0);
+
+      A = 64'h0000000000000000; B = 64'h0000000000000000;
+      #(delay);
+      assert(result == 64'h0000000000000000 && negative == 0 && zero == 1);
 	end
 endmodule

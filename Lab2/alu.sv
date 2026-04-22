@@ -41,6 +41,7 @@ module alu (input logic [63:0] A,
 		end
 	endgenerate
 	nor #50 get_zero (zero, orLvl2[0], orLvl2[1], orLvl2[2], orLvl2[3]);
+	
 	//sixtyfournor z0 (.in(result), .zero(zero));
 	
 	//Overflow
