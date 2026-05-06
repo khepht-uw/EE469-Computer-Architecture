@@ -7,14 +7,12 @@ module regfile(output logic [63:0] ReadData1,
 					input  logic [4:0]  ReadRegister2,
 					input  logic [4:0]  WriteRegister,
 					input  logic  RegWrite,
-					input  logic  clk
-					//input logic reset
+					input  logic  clk,
+					input logic reset //Add back from prev labs
 					);
 
    wire [31:0] write_enables;
    wire [31:0][63:0] reg_outputs;
-	wire reset;
-	assign reset = 1'b0;
 
    e_decoder5_32 dec(.out(write_enables), .in(WriteRegister), .en(RegWrite));
 

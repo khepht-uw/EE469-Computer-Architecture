@@ -6,12 +6,12 @@
 module adder64(input logic [63:0] A,
 					input logic [63:0] B,
 					input logic cin,
-					output logic [63:0] result;
+					output logic [63:0] result,
 					output logic cout
 					);
 
     wire [64:0] carrier;
-    assign carry[0] = cin;
+    assign carrier[0] = cin;
 
     genvar i;
     generate
