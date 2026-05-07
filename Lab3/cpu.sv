@@ -101,13 +101,6 @@ module cpu (
 		.sel(BrTaken)
 		);
 		
-	mux2_1_64b br_sel(
-		.out(PC_next),
-		.i0(PC_after_branch),
-		.i1(reg_data1), // Reg[Rd] — 64b ReadData1 from regfile
-		.sel(BRSel)
-		);
-		
 	and #50 g_cbz(cbz_taken, Branch, zero);
 	xor #50 g_xor(neg_xor_ovf, flag_negative, flag_overflow);
 	and #50 g_blt(blt_taken, Branch, neg_xor_ovf);
@@ -139,8 +132,14 @@ module cpu (
 		.sel(Reg2Loc)
 		);
 		
-	assign reg_read1 = instruction[9:5];
-	
+//	assign reg_read1 = instruction[9:5]; Replaced with the following:
+	mux2_1_5b reg1_mux(
+    .out(reg_read1),
+    .i0(instruction[9:5]),  // normal: Rn
+    .i1(instruction[4:0]),  // BR: Rd
+    .sel(BRSel)
+	);
+
 	regfile rf(
 		.ReadData1(reg_data1),
 		.ReadData2(reg_data2),
@@ -216,14 +215,21 @@ module cpu (
 		.i0(reg_writedata),	// BL=0: normal writeback
 		.i1(PC_add4),			// BL=1: return address
 		.sel(BL)
-	);
+		);
+	
+	mux2_1_64b br_sel(
+		.out(PC_next),
+      .i0(PC_after_branch),
+      .i1(reg_data1), // Reg[Rd] — 64b ReadData1 from regfile
+      .sel(BRSel)
+      );
 
 	mux2_1_5b bl_reg_mux(
 		.out(reg_write_addr),
 		.i0(instruction[4:0]),  // BL=0: normal Rd
 		.i1(5'b11110),          // BL=1: X30
 		.sel(BL)
-	);
+		);
 
 endmodule
 

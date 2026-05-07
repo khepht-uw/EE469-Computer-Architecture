@@ -24,7 +24,7 @@ add wave -noupdate -radix decimal /cpustim/dut/se_brAddr
 add wave -noupdate -radix decimal /cpustim/dut/br_shifted
 add wave -noupdate /cpustim/dut/ALUOp
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {1027097 ps} 0}
+WaveRestoreCursors {{Cursor 1} {987995 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 177
 configure wave -valuecolwidth 311

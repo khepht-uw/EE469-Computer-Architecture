@@ -61,7 +61,7 @@ module control(
 		
 			//BR 
 			11'b11010110000: begin
-				UncondBranch = 1;
+				UncondBranch = 0;
 				ALUOp = 3'b000;
 				BRSel = 1;
          end
