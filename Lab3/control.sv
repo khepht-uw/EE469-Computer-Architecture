@@ -25,8 +25,7 @@ module control(
 		
 		casez(instruction[31:21])
 			//ADDS
-			11'b10001011000: begin
-				Reg2Loc   = 1;
+			11'b10101011000: begin
 				RegWrite  = 1;
 				FlagWrite = 1;
 				ALUOp     = 3'b010; // ADD
@@ -86,7 +85,7 @@ module control(
 			
 			//STUR
 			11'b11111000000: begin
-				Reg2Loc = 0;
+				Reg2Loc = 1;
 				ALUSrc = 1;
 				MemWrite = 1;
 				ALUOp = 3'b010; // ADD for address calculation
@@ -94,8 +93,7 @@ module control(
          end
 			
 			//SUBS
-			11'b11001011000: begin
-				Reg2Loc = 1;
+			11'b11101011000: begin
 				RegWrite = 1;
 				FlagWrite = 1;
 				ALUOp = 3'b011; // SUB

@@ -108,7 +108,7 @@ module cpu (
 		.sel(BRSel)
 		);
 		
-	and #50 g_cbz(cbz_taken, Branch, flag_zero);
+	and #50 g_cbz(cbz_taken, Branch, zero);
 	xor #50 g_xor(neg_xor_ovf, flag_negative, flag_overflow);
 	and #50 g_blt(blt_taken, Branch, neg_xor_ovf);
 	or #50 g_brt(BrTaken, UncondBranch, cbz_taken, blt_taken); //Branch if any of these are true
