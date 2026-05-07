@@ -14,14 +14,14 @@ module cpustim();
 
     initial clk = 0;
 	 initial $display("Benchmark loaded");
-    always #55000 clk = ~clk;
+    always #50000 clk = ~clk;
     
     initial begin
 		 reset = 1;
 		 @(posedge clk);
 		 @(negedge clk);
 		 reset = 0;
-		 repeat(100) @(posedge clk);	
+		 repeat(600) @(posedge clk);	
 		 $stop;  // forces simulation to stop no matter what
 	end
 
