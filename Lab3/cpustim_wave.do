@@ -6,15 +6,20 @@ add wave -noupdate /cpustim/dut/instruction
 add wave -noupdate /cpustim/dut/PC_current
 add wave -noupdate -radix decimal /cpustim/dut/PC_next
 add wave -noupdate -radix decimal /cpustim/dut/rf/reg_outputs
-add wave -noupdate -radix decimal /cpustim/dut/reg_read1
-add wave -noupdate -radix decimal /cpustim/dut/reg_read2
+add wave -noupdate -radix decimal /cpustim/dut/alu_result
 add wave -noupdate -radix decimal /cpustim/dut/reg_data1
 add wave -noupdate -radix decimal /cpustim/dut/reg_data2
+add wave -noupdate /cpustim/dut/zero
+add wave -noupdate /cpustim/dut/carryout
+add wave -noupdate /cpustim/dut/overflow
+add wave -noupdate /cpustim/dut/negative
+add wave -noupdate /cpustim/dut/flag_zero
+add wave -noupdate -radix decimal /cpustim/dut/reg_read1
+add wave -noupdate -radix decimal /cpustim/dut/reg_read2
 add wave -noupdate /cpustim/dut/BRSel
 add wave -noupdate /cpustim/dut/UncondBranch
 add wave -noupdate /cpustim/dut/BrTaken
 add wave -noupdate -radix decimal /cpustim/dut/branch_target
-add wave -noupdate -radix decimal /cpustim/dut/alu_result
 add wave -noupdate /cpustim/dut/ImmSrc
 add wave -noupdate /cpustim/dut/ALUSrc
 add wave -noupdate /cpustim/dut/Reg2Loc
@@ -24,7 +29,7 @@ add wave -noupdate -radix decimal /cpustim/dut/se_brAddr
 add wave -noupdate -radix decimal /cpustim/dut/br_shifted
 add wave -noupdate /cpustim/dut/ALUOp
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {987995 ps} 0}
+WaveRestoreCursors {{Cursor 1} {4250700 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 177
 configure wave -valuecolwidth 311
@@ -40,4 +45,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {1319064 ps}
+WaveRestoreZoom {0 ps} {5276256 ps}

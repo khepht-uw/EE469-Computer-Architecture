@@ -16,6 +16,7 @@ module cpu (
 	logic ALUSrc, FlagWrite, ImmSrc;
 	logic Branch, UncondBranch, BL, BRSel;
 	logic MemWrite, MemtoReg, MemRead;
+	logic CBZ_Br, BLT_Br;
 	logic [2:0] ALUOp;
 	
 	//Register file wires
@@ -101,11 +102,10 @@ module cpu (
 		.sel(BrTaken)
 		);
 		
-	and #50 g_cbz(cbz_taken, Branch, zero);
+	and #50 g_cbz(cbz_taken, CBZ_Br, zero);
+	and #50 g_blt(blt_taken, BLT_Br, neg_xor_ovf);
 	xor #50 g_xor(neg_xor_ovf, flag_negative, flag_overflow);
-	and #50 g_blt(blt_taken, Branch, neg_xor_ovf);
 	or #50 g_brt(BrTaken, UncondBranch, cbz_taken, blt_taken); //Branch if any of these are true
-	
 	
 	//BOTTOM MODULES (MEMORY AND REGFILE)
 	control cntrl(
@@ -122,6 +122,8 @@ module cpu (
       .ImmSrc(ImmSrc),
 		.BL(BL),
 		.BRSel(BRSel),
+		.CBZ_Br(CBZ_Br),
+		.BLT_Br(BLT_Br),
       .ALUOp(ALUOp)
 		);
 		

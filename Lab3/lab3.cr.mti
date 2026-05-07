@@ -5,6 +5,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	regfile
 
+} {} {}} C:/ee469labs/lab3/cpu.sv {1 {vlog -work work -sv -stats=none C:/ee469labs/lab3/cpu.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module cpu
+
+Top level modules:
+	cpu
+
 } {} {}} C:/ee469labs/lab3/se.sv {1 {vlog -work work -sv -stats=none C:/ee469labs/lab3/se.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module se

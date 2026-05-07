@@ -11,10 +11,10 @@ module cpustim();
         .reset(reset)
     );
     
-    // Clock: 10000ps period (long enough for worst-case propagation)
+
     initial clk = 0;
 	 initial $display("Benchmark loaded");
-    always #50000 clk = ~clk;
+    always #55000 clk = ~clk;
     
     initial begin
 		 reset = 1;

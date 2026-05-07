@@ -4,7 +4,7 @@
 module control(
 					input logic [31:21] instruction,
 					output logic Reg2Loc, UncondBranch, Branch, MemRead, MemtoReg, MemWrite, ALUSrc, RegWrite, FlagWrite,
-					output logic ImmSrc, BL, BRSel,
+					output logic ImmSrc, BL, BRSel, CBZ_Br, BLT_Br,
 					output logic [2:0] ALUOp
 					);
 					
@@ -22,6 +22,8 @@ module control(
 		ImmSrc = 0;
 		BL = 0;
 		BRSel = 0;
+		CBZ_Br = 0;
+		BLT_Br = 0;
 		
 		casez(instruction[31:21])
 			//ADDS
@@ -47,6 +49,7 @@ module control(
 			
 			//B.LT : NEEDS WORK. If (flags.negative != flags.overflow) PC = PC + SignExtend(Imm19<<2)
 			11'b01010100???: begin
+				BLT_Br = 1;
 				Branch = 1;
 				ALUOp  = 3'b000;
          end
@@ -69,8 +72,9 @@ module control(
 			//CBZ
 			11'b10110100???: begin
 				Reg2Loc = 1; //read Rd into ReadData2
-				Branch  = 1;
-				ALUOp   = 3'b000; // pass B through, zero flag = is Rd zero?
+				Branch = 1;
+				ALUOp = 3'b000; // pass B through, zero flag = is Rd zero?
+				CBZ_Br = 1;
          end
 			
 			//LDUR
